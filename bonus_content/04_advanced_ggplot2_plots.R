@@ -1,4 +1,3 @@
-
 #' This script demonstrates a bit more advanced ggplot2 plots.
 #'
 #' # Keep 30 first rows in the mtcars natively available dataset
@@ -32,7 +31,8 @@ p <- ggplot(mtcars, aes(
   size = cyl
 )) +
   geom_point() +
-  theme(legend.position = "none") + ggthemes::theme_tufte()
+  theme(legend.position = "none") +
+  ggthemes::theme_tufte()
 
 #' Tufte was a pioneer in the field of data visualization. His style is
 #' minimalistic and focuses on the data. The theme_tufte() function from the
