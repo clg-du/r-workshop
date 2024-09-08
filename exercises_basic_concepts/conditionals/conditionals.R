@@ -1,16 +1,5 @@
-
 # Exercises: Conditionals
-
-# Please note that in these exercise we will use the %% operator, which is the
-# modulo operator, or "mod" operator. The modulo operator returns the remainder
-# of a division.
-
-# Example: 5 %% 2 = 1, because 5 / 2 = 2 with remainder 1. i.e., 5 = 2 * 2 + 1.
-
-# The modulo operator is, in particular, useful for checking if a number is even
-# or odd! Other use cases exist, such as in cryptography, but we will not cover
-# them here.
-
+#
 # Exercise 1 ----
 #
 # Write a program that checks if a given number is even or odd.
@@ -22,8 +11,7 @@
 
 # Exercise 2 ----
 #
-# Write a program that checks if a given number is positive,
-# negative, or zero.
+# Write a program that checks if a given number is positive, negative, or zero.
 #
 # Hint: Use nested if-else statements to check the sign of the number.
 #
@@ -41,8 +29,7 @@
 
 # Exercise 4 ----
 #
-# Write a program that checks if a given vector contains a specified
-# element.
+# Write a program that checks if a given vector contains a specified element.
 #
 # Hint: Use the %in% operator to check if the element is in the vector.
 #
@@ -51,8 +38,7 @@
 
 # Exercise 5 ----
 #
-# Write a program that checks if a given number is between two other
-# numbers.
+# Write a program that checks if a given number is between two other numbers.
 #
 # Hint: Use the logical AND operator (&) to combine the conditions.
 #
@@ -130,10 +116,9 @@
 #
 # Example: 121 is a palindrome because it reads the same forwards and backwards.
 #
-# Hint: Convert the number to a string and compare it with its reverse.
-#       Use the rev() function to reverse the characters in a string.
-#       Use the as.character() function to convert a number to a string.
-#       Use the strsplit() function to split a string into individual characters.
+# Hint: Convert the number to a string and compare it with its reverse. Use the
+#       rev() function to reverse the characters in a string. Use the
+#       as.character() function to convert a number to a string. Use the
+#       strsplit() function to split a string into individual characters.
 #
 # Your code here:
-

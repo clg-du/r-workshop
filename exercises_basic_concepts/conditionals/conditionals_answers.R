@@ -1,4 +1,5 @@
-
+# Exercise answers: Conditionals
+#
 # Exercise 1 ----
 #
 # Write a program that checks if a given number is even or odd.
