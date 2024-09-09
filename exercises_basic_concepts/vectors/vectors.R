@@ -8,11 +8,36 @@
 #
 #' Tip:        Read up on data coercion and order of coercion in R.
 
+my_vector <- c(7, FALSE, "Charlie", NA)
+my_vector
+
+my_new_vector <- c(2, 3, 6, 10, 2)
+my_new_vector
+
+my_char_vector <- c("Adam", "Steve", "Julie")
+my_char_vector
+
+c(1,2,3) * c(1,2,3)
+
+
+
+# How do we concatenate string in R?
+
+# example 1
+paste("My","name","is","Charlie")
+# example 2
+paste("My","name","is","Charlie", sep = "")
+# example 3
+paste0("My","name","is","Charlie")
 
 #' Exercise 2: Write a program that adds two vectors of integers of length 3.
 #'             What happens if you add two vectors of different lengths?
 #'             What happens if you add two vectors of different types?
 
+c(1,2,3) + c(1,2,3)
+c(1,2,3) + c("hi","hello","see you!")
+
+# added by row.
 
 #' Exercise 3: Write a program that appends a value to an empty vector.
 #'             The resulting vector should have length 1.
