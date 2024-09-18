@@ -56,7 +56,7 @@ plot(mtcars$wt, mtcars$mpg)
 ggplot(mtcars, aes(x = wt, y = mpg)) +
     geom_point() +
     labs(title = "Scatter plot of mpg vs wt", x = "Weight (1000 lbs)", y = "Miles per gallon") +
-    theme_minimal()
+    theme_classic()
 
 #' Note that the theme_minimal() function is used to apply a minimal theme to
 #' the plot. There are many other themes available in ggplot2, such as

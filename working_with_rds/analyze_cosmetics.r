@@ -2,7 +2,7 @@
 #' Analyze cosmetics data
 
 #' Load the data
-cosmetics <- read.csv("working_with_csv/_data/most_used_beauty_cosmetics_products_extended.csv")
+cosmetics <- read.csv("working_with_rds/_data/most_used_beauty_cosmetics_products_extended.csv")
 
 #' Display the structure of the data
 str(cosmetics)
@@ -20,14 +20,12 @@ cosmetics$Product_Size <- factor(cosmetics$Product_Size,
 levels(cosmetics$Product_Size)
 str(cosmetics$Product_Size)
 
-# We want to retrieve all products which has a product size
-# in excess of 150ml
-cosmetics_subset <- cosmetics[cosmetics$Product_Size > "150ml", "Country_of_Origin"]
+#' Store the data, but keep object intact
+saveRDS(cosmetics, "working_with_rds/_rds/cosmetics.rds")
 
-# Check summary
-summary(cosmetics_subset)
-nrow(cosmetics_subset)
+#' Retrieve the .rds file again, but name it differently
+cosmetics_rds <- readRDS("working_with_rds/_rds/cosmetics.rds")
 
-# histogram
-hist(cosmetics$Price_USD)
+#' Use function 'identical' to compare two objects
+identical(cosmetics, cosmetics_rds)
 
