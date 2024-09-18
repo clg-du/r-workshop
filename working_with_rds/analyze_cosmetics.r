@@ -28,4 +28,3 @@ cosmetics_rds <- readRDS("working_with_rds/_rds/cosmetics.rds")
 
 #' Use function 'identical' to compare two objects
 identical(cosmetics, cosmetics_rds)
-

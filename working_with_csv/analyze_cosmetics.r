@@ -30,4 +30,3 @@ nrow(cosmetics_subset)
 
 # histogram
 hist(cosmetics$Price_USD)
-

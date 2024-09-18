@@ -15,7 +15,6 @@
 #' 
 
 
-
 #' Exercise 2: Write a function what will return TRUE if a given integer is inside a vector.
 
 
