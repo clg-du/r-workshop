@@ -1,0 +1,87 @@
+---
+title: "08: Loops"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Loops
+
+In R, loops are used to repeat a block of code multiple times. The most common type of loop is the `for` loop.
+
+```{r}
+# A for loop that prints the numbers 1 to 5
+for (i in 1:5) {
+  print(i)
+}
+```
+
+## Exercises
+
+1. Write a `for` loop that prints the first 5 even numbers.
+
+```{r}
+# Your code here
+```
+
+2. Create a numeric vector named `my_vector` with the numbers 1 to 10. Write a `for` loop that iterates over `my_vector` and prints the square of each number.
+
+```{r}
+# Your code here
+```
+
+3. Create a character vector named `my_colors` with your three favorite colors. Write a `for` loop that iterates over `my_colors` and prints each color.
+
+```{r}
+# Your code here
+```
+
+4. Write a `for` loop that prints the numbers from 1 to 10.
+
+```{r}
+# Your code here
+```
+
+5. Write a `for` loop that prints the even numbers from 1 to 10.
+
+```{r}
+# Your code here
+```
+
+6. Write a program that calculates the factorial of a given number (e.g., 5!) using a `for` loop.
+
+```{r}
+# Your code here
+```
+
+7. Write a program that prints the Fibonacci sequence up to a given number of terms (e.g., 10 terms) using a `for` loop.
+
+```{r}
+# Your code here
+```
+
+8. Write a program that prints the multiplication table of a given number (e.g., 7) using a `for` loop. The output should be in a human-readable format (e.g., "7 x 1 = 7").
+
+```{r}
+# Your code here
+```
+
+9. Write a program that prints the prime numbers up to a given number (e.g., 20) using a `for` loop and conditional statements.
+
+```{r}
+# Your code here
+```
+
+10. Write a program that prints the sum of the digits of a given number (e.g., 123) using a `for` loop.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](loops_answers.Rmd)

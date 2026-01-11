@@ -1,0 +1,123 @@
+---
+title: "08: Loops (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+for (i in 1:5) {
+  print(i * 2)
+}
+
+# Solution to Exercise 2
+my_vector <- 1:10
+for (number in my_vector) {
+  print(number^2)
+}
+
+# Solution to Exercise 3
+my_colors <- c("blue", "green", "purple")
+for (color in my_colors) {
+  print(color)
+}
+
+# Solution to Exercise 4
+for (i in 1:10) {
+  print(i)
+}
+
+# Solution to Exercise 5
+for (i in 1:10) {
+  if (i %% 2 == 0) {
+    print(i)
+  }
+}
+
+# Solution to Exercise 6
+calculate_factorial <- function(n) {
+  factorial_result <- 1
+  if (n < 0) {
+    print("Factorial is not defined for negative numbers.")
+  } else if (n == 0) {
+    print("The factorial of 0 is 1.")
+  } else {
+    for (i in 1:n) {
+      factorial_result <- factorial_result * i
+    }
+    print(paste("The factorial of", n, "is", factorial_result))
+  }
+}
+calculate_factorial(5)
+
+# Solution to Exercise 7
+fibonacci <- function(n_terms) {
+  a <- 0
+  b <- 1
+  if (n_terms <= 0) {
+    print("Please enter a positive integer.")
+  } else if (n_terms == 1) {
+    print(a)
+  } else {
+    print(a)
+    print(b)
+    for (i in 3:n_terms) {
+      next_term <- a + b
+      print(next_term)
+      a <- b
+      b <- next_term
+    }
+  }
+}
+fibonacci(10)
+
+# Solution to Exercise 8
+multiplication_table <- function(num) {
+  for (i in 1:10) {
+    result <- num * i
+    print(paste(num, "x", i, "=", result))
+  }
+}
+multiplication_table(7)
+
+# Solution to Exercise 9
+is_prime_num <- function(num) {
+  if (num <= 1) {
+    return(FALSE)
+  }
+  for (i in 2:(num - 1)) {
+    if (num %% i == 0) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+print_primes <- function(limit) {
+  for (i in 1:limit) {
+    if (is_prime_num(i)) {
+      print(i)
+    }
+  }
+}
+print_primes(20)
+
+# Solution to Exercise 10
+sum_digits <- function(num) {
+  num_str <- as.character(num)
+  digits <- as.numeric(strsplit(num_str, "")[[1]])
+  total_sum <- 0
+  for (digit in digits) {
+    total_sum <- total_sum + digit
+  }
+  print(paste("The sum of digits is:", total_sum))
+}
+sum_digits(123)
+```

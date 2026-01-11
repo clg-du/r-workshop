@@ -1,0 +1,68 @@
+---
+title: "02: Basic ggplot2 Plots"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Introduction to Basic ggplot2 Plots
+
+This document provides an introduction to creating basic plots using `ggplot2`, a powerful and flexible R package for data visualization based on the grammar of graphics. `ggplot2` allows you to build plots layer by layer, providing fine-grained control over every aspect of your visualization.
+
+### Loading Data
+
+We will use the built-in `mtcars` dataset, which contains information about 32 automobiles.
+
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+### Simple Scatter Plot
+
+Let's create a scatter plot to visualize the relationship between `mpg` (miles per gallon) and `wt` (weight).
+
+The `ggplot()` function initializes a ggplot object. You specify the dataset and map variables to aesthetics (like x-axis, y-axis) using `aes()`. Then, you add geometric objects (geoms) like `geom_point()` for scatter plots using the `+` operator.
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point()
+```
+
+This `ggplot2` approach differs significantly from base R plotting. In `ggplot2`, you declare the data and aesthetic mappings once, and then add layers representing different graphical elements. This layered approach makes `ggplot2` highly flexible and extensible.
+
+Compare this to the equivalent base R plot:
+```{r}
+plot(mtcars$wt, mtcars$mpg)
+```
+
+### Improving the Plot: Labels and Theme
+
+We can enhance the plot by adding a title, clearer axis labels, and applying a theme for a more polished look. `labs()` is used for labels and titles, and `theme_classic()` applies a classic white background theme.
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(
+    title = "Scatter Plot of Miles per Gallon vs. Weight",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon"
+  ) +
+  theme_classic()
+```
+
+`ggplot2` offers many built-in themes (e.g., `theme_minimal()`, `theme_bw()`) and extensive customization options.
+
+### Further Exploration
+
+This is just a basic introduction. `ggplot2` allows for much more:
+*   **Colors and Shapes:** Mapping variables to colors or shapes of points.
+*   **Faceting:** Creating multiple plots based on different categories (e.g., `facet_wrap()`, `facet_grid()`).
+*   **Other Geoms:** Creating line plots (`geom_line()`), bar plots (`geom_bar()`), histograms (`geom_histogram()`), box plots (`geom_boxplot()`), etc.
+*   **Statistical Transformations:** Adding regression lines (`geom_smooth()`), density plots (`geom_density()`).
+*   **Customization:** Modifying fonts, colors, legend positions, and more.

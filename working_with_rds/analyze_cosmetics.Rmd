@@ -1,0 +1,70 @@
+---
+title: "Analyzing Cosmetics Data (RDS)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr) # For read_csv
+```
+
+## Introduction
+
+This document demonstrates how to load, explore, transform data from a CSV file, and then save and load it as an RDS file in R, with a focus on `dplyr` for modern data analysis workflows.
+
+## Exercises
+
+### Exercise 1: Load the Data
+
+Load the `most_used_beauty_cosmetics_products_extended.csv` dataset into an R data frame. Use `read_csv()` from the `readr` package for this.
+
+```{r}
+# Your code here
+```
+
+### Exercise 2: Explore the Data
+
+Display the structure of the `cosmetics` data frame, get a statistical summary, and check the unique values of the `Product_Size` column.
+
+```{r}
+# Your code here
+```
+
+### Exercise 3: Data Transformation - Product Size
+
+Transform the `Product_Size` column into an ordered factor with appropriate levels.
+
+```{r}
+# Your code here
+```
+
+### Exercise 4: Save Data to RDS
+
+Save the transformed `cosmetics` data frame to an RDS file named `cosmetics.rds` in the `_rds` directory.
+
+```{r}
+# Your code here
+```
+
+### Exercise 5: Load Data from RDS
+
+Load the `cosmetics.rds` file back into R, but name the new object `cosmetics_from_rds`.
+
+```{r}
+# Your code here
+```
+
+### Exercise 6: Compare Data Frames
+
+Use the `identical()` function to compare the original `cosmetics` data frame with `cosmetics_from_rds` to ensure no data loss or alteration.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](analyze_cosmetics_rds_answers.Rmd)

@@ -1,0 +1,174 @@
+---
+title: "07: Conditionals (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+number <- 5
+if (number > 0) {
+  print("The number is positive")
+} else {
+  print("The number is not positive")
+}
+
+# Solution to Exercise 2
+age <- 20
+if (age >= 18) {
+  print("You are eligible to vote")
+} else {
+  print("You are not eligible to vote")
+}
+
+# Solution to Exercise 3
+check_grade_func <- function(grade) {
+  if (grade >= 50) {
+    return("Pass")
+  } else {
+    return("Fail")
+  }
+}
+check_grade_func(75)
+check_grade_func(45)
+
+# Solution to Exercise 4
+is_even_odd <- function(num) {
+  if (num %% 2 == 0) {
+    print("Even")
+  } else {
+    print("Odd")
+  }
+}
+is_even_odd(4)
+is_even_odd(7)
+
+# Solution to Exercise 5
+check_sign <- function(num) {
+  if (num > 0) {
+    print("Positive")
+  } else if (num < 0) {
+    print("Negative")
+  } else {
+    print("Zero")
+  }
+}
+check_sign(10)
+check_sign(-5)
+check_sign(0)
+
+# Solution to Exercise 6
+is_empty_string <- function(str) {
+  if (nchar(str) == 0) {
+    print("String is empty")
+  } else {
+    print("String is not empty")
+  }
+}
+is_empty_string("")
+is_empty_string("hello")
+
+# Solution to Exercise 7
+check_element_in_vector <- function(element, vector) {
+  if (element %in% vector) {
+    print("Element is present")
+  } else {
+    print("Element is not present")
+  }
+}
+check_element_in_vector(3, c(1, 2, 3, 4))
+check_element_in_vector(5, c(1, 2, 3, 4))
+
+# Solution to Exercise 8
+is_between <- function(num, lower, upper) {
+  if (num > lower && num < upper) {
+    print("Number is between the limits")
+  } else {
+    print("Number is not between the limits")
+  }
+}
+is_between(5, 1, 10)
+is_between(15, 1, 10)
+
+# Solution to Exercise 9
+is_leap_year <- function(year) {
+  if ((year %% 4 == 0 && year %% 100 != 0) || (year %% 400 == 0)) {
+    print("Leap Year")
+  } else {
+    print("Not a Leap Year")
+  }
+}
+is_leap_year(2000)
+is_leap_year(1900)
+is_leap_year(2024)
+
+# Solution to Exercise 10
+is_prime <- function(num) {
+  if (num <= 1) {
+    print("Not a prime number")
+    return()
+  }
+  for (i in 2:(num - 1)) {
+    if (num %% i == 0) {
+      print("Not a prime number")
+      return()
+    }
+  }
+  print("Prime number")
+}
+is_prime(7)
+is_prime(10)
+
+# Solution to Exercise 11
+assign_grade <- function(score) {
+  if (score >= 90) {
+    print("A")
+  } else if (score >= 80) {
+    print("B")
+  } else if (score >= 70) {
+    print("C")
+  } else if (score >= 60) {
+    print("D")
+  } else {
+    print("F")
+  }
+}
+assign_grade(95)
+assign_grade(72)
+
+# Solution to Exercise 12
+is_perfect_square <- function(num) {
+  if (num < 0) {
+    print("Not a perfect square")
+    return()
+  }
+  sqrt_num <- sqrt(num)
+  if (sqrt_num == floor(sqrt_num)) {
+    print("Perfect Square")
+  } else {
+    print("Not a Perfect Square")
+  }
+}
+is_perfect_square(9)
+is_perfect_square(10)
+
+# Solution to Exercise 13
+is_palindrome <- function(num) {
+  num_str <- as.character(num)
+  reversed_str <- paste(rev(strsplit(num_str, "")[[1]]), collapse = "")
+  if (num_str == reversed_str) {
+    print("Palindrome")
+  } else {
+    print("Not a Palindrome")
+  }
+}
+is_palindrome(121)
+is_palindrome(123)
+```

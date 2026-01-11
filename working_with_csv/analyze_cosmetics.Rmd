@@ -1,0 +1,71 @@
+---
+title: "Analyzing Cosmetics Data (CSV)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+library(readr) # For read_csv
+```
+
+## Introduction
+
+This document demonstrates how to load, explore, transform, and visualize cosmetics product data from a CSV file using R, with a focus on `dplyr` and `ggplot2` for modern data analysis workflows.
+
+## Exercises
+
+### Exercise 1: Load the Data
+
+Load the `most_used_beauty_cosmetics_products_extended.csv` dataset into an R data frame. Use `read_csv()` from the `readr` package for this.
+
+```{r}
+# Your code here
+```
+
+### Exercise 2: Explore the Data
+
+Display the structure of the `cosmetics` data frame, get a statistical summary, and check the unique values of the `Product_Size` column.
+
+```{r}
+# Your code here
+```
+
+### Exercise 3: Data Transformation - Product Size
+
+Transform the `Product_Size` column into an ordered factor with appropriate levels.
+
+```{r}
+# Your code here
+```
+
+### Exercise 4: Data Filtering
+
+Retrieve all products that have a `Product_Size` in excess of "150ml". Store this in a new data frame called `cosmetics_large_size`.
+
+```{r}
+# Your code here
+```
+
+### Exercise 5: Data Summarization
+
+Get a summary of the `cosmetics_large_size` data frame and find out how many rows it contains.
+
+```{r}
+# Your code here
+```
+
+### Exercise 6: Data Visualization - Price Distribution
+
+Create a histogram of the `Price_USD` column to visualize its distribution.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](analyze_cosmetics_answers.Rmd)

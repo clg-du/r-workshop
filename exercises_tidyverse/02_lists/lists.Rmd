@@ -1,0 +1,84 @@
+---
+title: "02: Lists"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Lists
+
+In R, a list is a generic vector containing other objects. For example, a list can contain a numeric vector, a character vector, and a logical vector. The `list()` function is used to create a list.
+
+```{r}
+# A list containing a numeric vector, a character vector, and a logical vector
+my_list <- list(
+  numbers = c(1, 2, 3),
+  characters = c("a", "b", "c"),
+  logicals = c(TRUE, FALSE, TRUE)
+)
+print(my_list)
+```
+
+## Exercises
+
+1. Create a list named `my_info` that contains your name, your age, and whether you are a student or not.
+
+```{r}
+# Your code here
+```
+
+2. Access the `age` element from the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+3. Add a new element to the `my_info` list called `hobbies` that contains a vector of your hobbies.
+
+```{r}
+# Your code here
+```
+
+4. Create an empty list named `my_empty_list`.
+
+```{r}
+# Your code here
+```
+
+5. Get the length of the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+6. Get the first element of the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+7. Get the last element of the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+8. Get the elements from the second to the third position in the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+9. Remove the `is_student` element from the `my_info` list.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](lists_answers.Rmd)

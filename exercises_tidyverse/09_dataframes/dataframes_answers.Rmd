@@ -1,0 +1,123 @@
+---
+title: "09: Data Frames (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr) # For reshaping data
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+data(mtcars)
+head(mtcars)
+
+# Solution to Exercise 2
+select(mtcars, mpg, cyl, hp)
+
+# Solution to Exercise 3
+filter(mtcars, cyl > 6)
+
+# Solution to Exercise 4
+mutate(mtcars, hp_per_cyl = hp / cyl)
+
+# Solution to Exercise 5
+arrange(mtcars, desc(mpg))
+
+# Solution to Exercise 6
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(avg_mpg = mean(mpg))
+
+# Solution to Exercise 7
+empty_df <- data.frame()
+print(empty_df)
+
+# Solution to Exercise 8
+students_df <- data.frame(
+  id = c(1, 2, 3),
+  name = c("Alice", "Bob", "Charlie"),
+  score = c(85, 92, 78)
+)
+print(students_df)
+
+# Solution to Exercise 9
+str(students_df)
+summary(students_df)
+
+# Solution to Exercise 10
+students_df$name
+
+# Solution to Exercise 11
+students_df[1:2, ]
+
+# Solution to Exercise 12
+students_df[3, c("name", "score")]
+
+# Solution to Exercise 13
+students_df <- students_df %>%
+  mutate(grade = case_when(
+    score >= 90 ~ "A",
+    score >= 80 ~ "B",
+    TRUE ~ "C"
+  ))
+print(students_df)
+
+# Solution to Exercise 14
+students_df <- students_df %>%
+  select(-score)
+print(students_df)
+
+# Solution to Exercise 15
+students_df <- students_df %>%
+  rename(student_name = name)
+print(students_df)
+
+# Solution to Exercise 16
+courses_df <- data.frame(
+  id = c(1, 2, 3),
+  course = c("Math", "Science", "History")
+)
+merged_df <- left_join(students_df, courses_df, by = "id")
+print(merged_df)
+
+# Solution to Exercise 17
+df1 <- data.frame(A = 1:2, B = c("X", "Y"))
+df2 <- data.frame(A = 3:4, B = c("Z", "W"))
+combined_rows_df <- bind_rows(df1, df2)
+print(combined_rows_df)
+
+# Solution to Exercise 18
+df3 <- data.frame(id = 1:2, C = c(10, 20))
+df4 <- data.frame(id = 1:2, D = c("P", "Q"))
+combined_cols_df <- bind_cols(df3, df4)
+print(combined_cols_df)
+
+# Solution to Exercise 19
+mtcars_long <- mtcars %>%
+  pivot_longer(
+    cols = c(mpg, disp, hp),
+    names_to = "metric",
+    values_to = "value"
+  )
+print(head(mtcars_long))
+
+# Solution to Exercise 20
+mean(mtcars$mpg)
+
+# Solution to Exercise 21
+nrow(mtcars)
+ncol(mtcars)
+
+# Solution to Exercise 22
+colMeans(mtcars)
+
+# Solution to Exercise 23
+rowSums(mtcars)
+```

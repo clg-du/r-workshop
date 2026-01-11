@@ -1,0 +1,127 @@
+---
+title: "04: Advanced ggplot2 Plots"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr) # For data manipulation if needed
+```
+
+## Introduction to Advanced ggplot2 Plots
+
+This document explores some more advanced `ggplot2` functionalities, including adding text labels, using marginal plots with `ggExtra`, and applying custom themes with `ggthemes`.
+
+### Adding Text Labels to Points
+
+Sometimes, it's useful to label individual data points directly on the plot. We can achieve this using `geom_text()`. The `nudge_x` and `nudge_y` arguments help position the labels, and `check_overlap = T` (from `ggrepel` internally, or can be used with `ggrepel::geom_text_repel`) helps prevent text labels from overlapping.
+
+First, let's prepare a subset of the `mtcars` data for cleaner visualization of labels.
+
+```{r}
+data_for_labels <- mtcars %>%
+  head(10) %>% # Taking the first 10 rows for demonstration
+  tibble::rownames_to_column("car_model") # Convert rownames to a column
+```
+
+```{r}
+ggplot(data_for_labels, aes(x = wt, y = mpg, label = car_model)) +
+  geom_point(color = "blue", size = 2) + # Show dots
+  geom_text(
+    nudge_x = 0.25, # Nudge text slightly to the right
+    nudge_y = 0.5,  # Nudge text slightly upwards
+    check_overlap = TRUE, # Prevent text from overlapping (basic approach)
+    size = 3
+  ) +
+  labs(
+    title = "Miles per Gallon vs. Weight with Car Models",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon"
+  ) +
+  theme_minimal()
+```
+
+### Marginal Plots with `ggExtra`
+
+The `ggExtra` package enhances `ggplot2` plots by adding marginal histograms, density plots, or boxplots to the sides of a scatter plot. This is excellent for visualizing the univariate distributions alongside their bivariate relationship.
+
+First, you might need to install `ggExtra`:
+```R
+# install.packages("ggExtra")
+```
+
+```{r message=FALSE}
+library(ggExtra)
+```
+
+Let's create a basic scatter plot.
+
+```{r}
+p <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl), size = hp)) +
+  geom_point(alpha = 0.8) +
+  labs(
+    title = "Scatter Plot with Marginal Distributions",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders",
+    size = "Horsepower"
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom") # Move legend for better fit
+print(p)
+```
+
+Now, let's add different types of marginal plots:
+
+#### Marginal Histogram
+```{r}
+p_hist <- ggMarginal(p, type = "histogram", fill = "skyblue", color = "darkblue")
+print(p_hist)
+```
+
+#### Marginal Density Plot
+```{r}
+p_density <- ggMarginal(p, type = "density", fill = "lightgreen", color = "darkgreen")
+print(p_density)
+```
+
+#### Marginal Box Plot
+```{r}
+p_boxplot <- ggMarginal(p, type = "boxplot", fill = "salmon", color = "darkred")
+print(p_boxplot)
+```
+
+### Custom Themes with `ggthemes`
+
+The `ggthemes` package provides a collection of extra themes, geoms, and scales for `ggplot2`, making it easy to apply visually appealing and publication-ready styles. One popular theme is `theme_tufte()`, inspired by Edward Tufte's principles of data visualization.
+
+First, you might need to install `ggthemes`:
+```R
+# install.packages("ggthemes")
+```
+
+```{r message=FALSE}
+library(ggthemes)
+```
+
+Let's apply the `theme_tufte()` to our previous scatter plot.
+
+```{r}
+p_tufte <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  labs(
+    title = "Miles per Gallon vs. Weight (Tufte Theme)",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  theme_tufte() + # Apply Tufte theme
+  theme(legend.position = "bottom")
+print(p_tufte)
+```
+This demonstrates how easy it is to change the overall aesthetic of your plots using predefined themes.
+
+This concludes the advanced `ggplot2` examples. There's a vast ecosystem of packages that extend `ggplot2`'s capabilities, allowing for highly specialized and customized visualizations.

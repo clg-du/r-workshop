@@ -1,0 +1,28 @@
+---
+title: "03: Factors (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+education_levels <- factor(c("High School", "Bachelor's", "Master's", "PhD", "Bachelor's"))
+print(education_levels)
+
+# Solution to Exercise 2
+levels(education_levels)
+
+# Solution to Exercise 3
+education_levels_ordered <- factor(education_levels,
+  levels = c("High School", "Bachelor's", "Master's", "PhD"),
+  ordered = TRUE
+)
+print(education_levels_ordered)
+```

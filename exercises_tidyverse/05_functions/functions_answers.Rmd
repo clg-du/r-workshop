@@ -1,0 +1,101 @@
+---
+title: "05: Functions (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+square_number <- function(x) {
+  return(x^2)
+}
+square_number(5)
+
+# Solution to Exercise 2
+get_greeting <- function(name) {
+  return(paste("Hello,", name, "!"))
+}
+get_greeting("Charlie")
+
+# Solution to Exercise 3
+calculate_mean <- function(numbers) {
+  return(mean(numbers))
+}
+calculate_mean(c(1, 2, 3, 4, 5))
+
+# Solution to Exercise 4
+sum_integers <- function(a, b) {
+  return(a + b)
+}
+sum_integers(3, 7)
+
+# Solution to Exercise 5
+is_in_vector <- function(integer, vector) {
+  return(integer %in% vector)
+}
+is_in_vector(5, c(1, 2, 3, 4, 5))
+is_in_vector(6, c(1, 2, 3, 4, 5))
+
+# Solution to Exercise 6
+print_column_info <- function(df) {
+  for (col_name in names(df)) {
+    cat(col_name, "is", class(df[[col_name]]), "\n")
+  }
+}
+my_df <- data.frame(
+  ID = 1:3,
+  Name = c("A", "B", "C"),
+  Value = c(10.5, 20.1, 30.0)
+)
+print_column_info(my_df)
+
+# Solution to Exercise 7
+count_occurrences <- function(vector, integer) {
+  return(sum(vector == integer))
+}
+count_occurrences(c(1, 2, 2, 3, 2, 4), 2)
+
+# Solution to Exercise 8
+analyze_vector <- function(vector) {
+  cat("Mean:", mean(vector), "\n")
+  cat("Standard Deviation:", sd(vector), "\n")
+  if (length(vector) %% 2 != 0) {
+    cat("Median:", median(vector), "\n")
+  }
+}
+analyze_vector(c(1, 2, 3, 4, 5))
+analyze_vector(c(1, 2, 3, 4, 5, 6))
+
+# Solution to Exercise 9
+find_divisors <- function(n) {
+  divisors <- c()
+  for (i in 2:(n - 1)) {
+    if (n %% i == 0) {
+      divisors <- c(divisors, i)
+    }
+  }
+  cat("Divisors of", n, ":", divisors, "\n")
+  return(length(divisors))
+}
+find_divisors(12)
+find_divisors(7)
+
+# Solution to Exercise 10
+replace_with_na <- function(df, value) {
+  df[df == value] <- NA
+  return(df)
+}
+my_df_2 <- data.frame(
+  A = c(1, 2, 3),
+  B = c("x", "y", "x")
+)
+replace_with_na(my_df_2, "x")
+replace_with_na(my_df_2, 2)
+```

@@ -1,0 +1,191 @@
+---
+title: "01: Basic Base R Graphics Plots"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Basic Base R Graphics Plots
+
+This document provides examples of how to create basic plots using R's base graphics system. While `ggplot2` is often preferred for its grammar of graphics, understanding base R plotting functions is fundamental.
+
+### Scatter Plot
+
+The `plot()` function is used to create scatter plots in R. The first argument is the x-axis values, and the second argument is the y-axis values. By default, `plot()` creates a scatter plot with points.
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+plot(x, y)
+```
+
+#### Customizing Scatter Plots
+
+Here's an example of a scatter plot with custom point colors and shapes. The `col` argument specifies the color, `pch` specifies the shape, and `cex` specifies the size of the points.
+
+```{r}
+plot(x,
+  y,
+  col = "red",
+  pch = 19, # Solid circle
+  cex = 2   # Magnification factor
+)
+```
+
+You can also customize axis labels, titles, and ranges. `xlab` and `ylab` set axis labels, `main` sets the plot title, and `xlim`/`ylim` define axis ranges. `cex.lab` and `cex.axis` control label and axis text size.
+
+```{r}
+plot(
+  x,
+  y,
+  col = "blue",
+  pch = 19,
+  cex = 2,
+  xlab = "X-axis Label",
+  ylab = "Y-axis Label",
+  main = "Custom Scatter Plot Example",
+  xlim = c(0, 6),
+  ylim = c(0, 12),
+  cex.lab = 1.2, # Magnification for axis labels
+  cex.axis = 1.2 # Magnification for axis text
+)
+# Adding a reference line
+abline(h = 7, col = "green", lty = 2) # Horizontal line at y=7
+# Adding text
+text(x = 3, y = 10, "Important Point", col = "purple")
+# Adding a legend
+legend("topleft", legend = "Data Points", col = "blue", pch = 19)
+```
+
+### Line Plot
+
+To create a line plot, use the `type` argument in the `plot()` function, setting `type = "l"`.
+
+```{r}
+x_line <- c(1, 2, 3, 4, 5)
+y_line <- c(1, 4, 9, 16, 25) # y = x^2
+plot(x_line, y_line, type = "l", main = "Line Plot Example")
+```
+
+#### Customizing Line Plots
+
+Customize line color and width using `col` and `lwd` (line width).
+
+```{r}
+plot(x_line,
+  y_line,
+  type = "l",
+  col = "darkgreen",
+  lwd = 3, # Line width
+  main = "Custom Line Plot"
+)
+# Add a horizontal reference line
+abline(h = 15, col = "orange", lty = 3) # Dashed line
+```
+
+### Bar Plot
+
+The `barplot()` function creates bar plots. The argument is a vector of values.
+
+```{r}
+data_vector_bar <- c(15, 22, 18, 30, 25)
+barplot(data_vector_bar, main = "Simple Bar Plot")
+```
+
+#### Customizing Bar Plots
+
+You can customize colors (`col`), borders (`border`), and provide custom labels (`names.arg`). Set `horiz = TRUE` for horizontal bars.
+
+```{r}
+barplot(
+  data_vector_bar,
+  col = "skyblue",
+  border = "darkblue",
+  names.arg = c("Category A", "Category B", "Category C", "Category D", "Category E"),
+  main = "Custom Vertical Bar Plot",
+  xlab = "Categories",
+  ylab = "Values"
+)
+
+barplot(
+  data_vector_bar,
+  col = rainbow(length(data_vector_bar)), # Different colors for each bar
+  border = "grey",
+  names.arg = c("Product X", "Product Y", "Product Z", "Product W", "Product V"),
+  horiz = TRUE, # Horizontal bars
+  main = "Custom Horizontal Bar Plot",
+  xlab = "Values",
+  ylab = "Products"
+)
+```
+
+### Histogram
+
+The `hist()` function creates histograms, showing the distribution of a numeric vector.
+
+```{r}
+# Generate random normal data
+set.seed(123) # for reproducibility
+random_data <- rnorm(1000, mean = 50, sd = 10)
+hist(random_data, main = "Simple Histogram")
+```
+
+#### Customizing Histograms
+
+Customize the number of bins (`breaks`), colors (`col`), and borders (`border`).
+
+```{r}
+hist(random_data,
+  breaks = 30, # More bins
+  col = "lightgreen",
+  border = "darkgreen",
+  main = "Custom Histogram with 30 Bins",
+  xlab = "Value Range",
+  ylab = "Frequency"
+)
+```
+
+### Box Plot
+
+The `boxplot()` function creates box plots, summarizing the distribution of a dataset using the five-number summary (minimum, first quartile, median, third quartile, maximum).
+
+```{r}
+# Generate random data
+set.seed(456) # for reproducibility
+data_boxplot_1 <- rnorm(100, mean = 0, sd = 1)
+boxplot(data_boxplot_1, main = "Simple Box Plot")
+```
+
+#### Customizing Box Plots
+
+Customize colors (`col`), borders (`border`), and labels (`names`). You can also plot multiple box plots for comparison.
+
+```{r}
+boxplot(
+  data_boxplot_1,
+  col = "lightpink",
+  border = "red",
+  names = "Dataset 1",
+  main = "Custom Box Plot"
+)
+
+# Multiple box plots
+set.seed(789) # for reproducibility
+data_boxplot_2 <- rnorm(100, mean = 5, sd = 2)
+data_boxplot_3 <- rpois(100, lambda = 3) # Poisson distribution
+
+boxplot(
+  data_boxplot_1,
+  data_boxplot_2,
+  data_boxplot_3,
+  col = c("lightpink", "lightblue", "lightgreen"),
+  border = "grey",
+  names = c("Normal 1", "Normal 2", "Poisson"),
+  main = "Comparison of Distributions",
+  ylab = "Value"
+)
+```

@@ -1,0 +1,90 @@
+---
+title: "05: Functions"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Functions
+
+In R, a function is a block of code that performs a specific task. You can define your own functions in R.
+
+```{r}
+# A simple function to add two numbers
+add_numbers <- function(x, y) {
+  return(x + y)
+}
+
+# Call the function
+add_numbers(5, 10)
+```
+
+## Exercises
+
+1. Write a function named `square_number` that takes a number as input and returns its square.
+
+```{r}
+# Your code here
+```
+
+2. Write a function named `get_greeting` that takes a name as input and returns a greeting message (e.g., "Hello, Charlie!").
+
+```{r}
+# Your code here
+```
+
+3. Write a function named `calculate_mean` that takes a numeric vector as input and returns its mean.
+
+```{r}
+# Your code here
+```
+
+4. Write a function that will return the sum of 2 integers.
+
+```{r}
+# Your code here
+```
+
+5. Write a function that will return `TRUE` if a given integer is inside a vector.
+
+```{r}
+# Your code here
+```
+
+6. Write a function that, given a data frame, will print the name of each column and the class of data it contains (e.g., "Variable1 is Numeric").
+
+```{r}
+# Your code here
+```
+
+7. Create a function that, given a vector and an integer, will return how many times the integer appears inside the vector.
+
+```{r}
+# Your code here
+```
+
+8. Create a function that, given a numeric vector, will print the mean and the standard deviation. It will optionally also print the median if the vector has an odd number of elements.
+
+```{r}
+# Your code here
+```
+
+9. Create a function that, given an integer, will calculate how many divisors it has (other than 1 and itself) and print the divisors.
+
+```{r}
+# Your code here
+```
+
+10. Create a function that, given a data frame and a value (number or character), will return the data frame with all occurrences of that value changed to `NA`.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](functions_answers.Rmd)

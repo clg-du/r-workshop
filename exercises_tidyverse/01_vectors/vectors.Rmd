@@ -1,0 +1,96 @@
+---
+title: "01: Vectors"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Vectors
+
+In R, a vector is a sequence of data elements of the same basic type. The `c()` function is used to create a vector.
+
+```{r}
+# A numeric vector
+numeric_vector <- c(1, 2, 3, 4, 5)
+print(numeric_vector)
+
+# A character vector
+character_vector <- c("a", "b", "c", "d", "e")
+print(character_vector)
+```
+
+## Exercises
+
+1. Create a numeric vector named `my_numeric_vector` with the numbers 10, 20, 30, 40, and 50.
+
+```{r}
+# Your code here
+```
+
+2. Create a character vector named `my_character_vector` with the names of your three favorite colors.
+
+```{r}
+# Your code here
+```
+
+3. Get the length of `my_numeric_vector`.
+
+```{r}
+# Your code here
+```
+
+4. Create a vector containing a numeric, a logical, and a character element. What is the type of the resulting vector?
+
+```{r}
+# Your code here
+```
+
+5. Add the following two vectors: `c(1, 2, 3)` and `c(4, 5, 6)`.
+
+```{r}
+# Your code here
+```
+
+6. What happens if you add two vectors of different lengths? Try adding `c(1, 2, 3)` and `c(4, 5)`.
+
+```{r}
+# Your code here
+```
+
+7. Create an empty vector named `my_results`. Then, append the number 10 to it.
+
+```{r}
+# Your code here
+```
+
+8. Given the vector `c(1, 5, 2, 8, 4, NA)`, find the sum, mean, and product of the vector. Then, do the same but ignore the `NA` value.
+
+```{r}
+# Your code here
+```
+
+9. Given the vector `c(1, 5, 2, 8, 4)`, find the minimum and maximum values.
+
+```{r}
+# Your code here
+```
+
+10. Sort the vector `c(1, 5, 2, 8, 4)` in ascending and descending order.
+
+```{r}
+# Your code here
+```
+
+11. Check if the number 5 is present in the vector `c(1, 5, 2, 8, 4)`.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](vectors_answers.Rmd)

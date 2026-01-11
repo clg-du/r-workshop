@@ -1,0 +1,54 @@
+---
+title: "04: Indexing (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+my_vector <- 1:10
+print(my_vector)
+
+# Solution to Exercise 2
+my_vector[5]
+
+# Solution to Exercise 3
+my_vector[c(2, 4, 6)]
+
+# Solution to Exercise 4
+my_list <- list(
+  name = "Charlie",
+  age = 30,
+  is_student = FALSE
+)
+my_list$name
+
+# Solution to Exercise 5
+my_matrix <- matrix(1:9, nrow = 3, byrow = TRUE)
+print(my_matrix)
+
+# Solution to Exercise 6
+my_matrix[1, ]
+
+# Solution to Exercise 7
+my_matrix[, 3]
+
+# Solution to Exercise 8
+diag(my_matrix)
+
+# Solution to Exercise 9
+my_matrix[2, 3]
+
+# Solution to Exercise 10
+my_matrix[c(1, 3), c(2, 3)]
+
+# Solution to Exercise 11
+my_matrix[my_matrix > 5]
+```

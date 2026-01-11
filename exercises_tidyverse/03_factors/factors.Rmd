@@ -1,0 +1,62 @@
+---
+title: "03: Factors"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Factors
+
+In R, a factor is a vector that can take on only a limited number of different values. Such a vector is often referred to as a categorical variable. The `factor()` function is used to create a factor.
+
+```{r}
+# A factor of eye colors
+eye_colors <- factor(c("brown", "blue", "green", "blue", "brown", "brown"))
+print(eye_colors)
+```
+
+## Exercises
+
+1. Create a factor named `education_levels` with the following education levels: "High School", "Bachelor's", "Master's", "PhD", "Bachelor's".
+
+```{r}
+# Your code here
+```
+
+2. Display the levels of the `education_levels` factor.
+
+```{r}
+# Your code here
+```
+
+3. Create an ordered factor for `education_levels`.
+
+```{r}
+# Your code here
+```
+
+4. Create a factor of movie ratings with the following ratings: "Good", "Great", "Good", "Excellent", "Good", "Bad". The levels should be "Bad", "Good", "Great", "Excellent".
+
+```{r}
+# Your code here
+```
+
+5. Create a data frame with two columns: `student` (a character vector of student names) and `grade` (a factor with levels "A", "B", "C", "D", "F").
+
+```{r}
+# Your code here
+```
+
+6. Subset the data frame to only include students with a grade of "A" or "B".
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](factors_answers.Rmd)

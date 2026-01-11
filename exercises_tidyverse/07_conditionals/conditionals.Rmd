@@ -1,0 +1,108 @@
+---
+title: "07: Conditionals"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Conditionals
+
+In R, conditionals are used to control the flow of execution based on certain conditions. The most common conditional statement is the `if-else` statement.
+
+```{r}
+# An if-else statement
+x <- 10
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is not greater than 5")
+}
+```
+
+## Exercises
+
+1. Write an `if-else` statement that checks if a number is positive or negative.
+
+```{r}
+# Your code here
+```
+
+2. Write an `if-else` statement that checks if a person is eligible to vote (age >= 18).
+
+```{r}
+# Your code here
+```
+
+3. Write a function named `check_grade` that takes a numeric grade as input and returns "Pass" if the grade is 50 or above, and "Fail" otherwise.
+
+```{r}
+# Your code here
+```
+
+4. Write a program that checks if a given number is even or odd.
+
+```{r}
+# Your code here
+```
+
+5. Write a program that checks if a given number is positive, negative, or zero.
+
+```{r}
+# Your code here
+```
+
+6. Write a program that checks if a given string is empty or not.
+
+```{r}
+# Your code here
+```
+
+7. Write a program that checks if a given vector contains a specified element.
+
+```{r}
+# Your code here
+```
+
+8. Write a program that checks if a given number is between two other numbers.
+
+```{r}
+# Your code here
+```
+
+9. Write a program that checks if a given year is a leap year.
+
+```{r}
+# Your code here
+```
+
+10. Write a program that checks if a given number is a prime number.
+
+```{r}
+# Your code here
+```
+
+11. Write a program that assigns grades (A, B, C, D, F) based on a given score (0-100).
+
+```{r}
+# Your code here
+```
+
+12. Write a program that checks if a given number is a perfect square.
+
+```{r}
+# Your code here
+```
+
+13. Write a program that checks if a given number is a palindrome.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](conditionals_answers.Rmd)

@@ -1,0 +1,76 @@
+---
+title: "06: Logical Operators"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Logical Operators
+
+In R, logical operators are used to perform logical operations. The most common logical operators are `&` (AND), `|` (OR), and `!` (NOT).
+
+```{r}
+# Logical AND
+TRUE & TRUE
+TRUE & FALSE
+
+# Logical OR
+TRUE | FALSE
+FALSE | FALSE
+
+# Logical NOT
+!TRUE
+!FALSE
+```
+
+## Exercises
+
+1. Create a numeric vector named `my_vector` with the numbers 1 to 10.
+
+```{r}
+# Your code here
+```
+
+2. Use a logical operator to select the numbers in `my_vector` that are greater than 5.
+
+```{r}
+# Your code here
+```
+
+3. Use a logical operator to select the numbers in `my_vector` that are less than or equal to 3.
+
+```{r}
+# Your code here
+```
+
+4. Use logical operators to select the numbers in `my_vector` that are greater than 3 AND less than 7.
+
+```{r}
+# Your code here
+```
+
+5. Create a character vector named `my_fruits` with "apple", "banana", "orange", "apple", "grape". Extract the elements that are equal to "apple".
+
+```{r}
+# Your code here
+```
+
+6. Create a data frame with `name` and `age` columns. Extract the rows where `age` is greater than 25.
+
+```{r}
+# Your code here
+```
+
+7. Using the same data frame, extract only the `name` column for rows where `age` is greater than 25.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](logical_operators_answers.Rmd)

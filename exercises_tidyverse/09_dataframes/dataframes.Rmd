@@ -1,0 +1,184 @@
+---
+title: "09: Data Frames"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr) # For reshaping data
+```
+
+## Introduction to Data Frames and dplyr
+
+In R, a data frame is a two-dimensional data structure, similar to a table in a database. The `dplyr` package provides a powerful and intuitive grammar for data manipulation.
+
+```{r}
+# Create a data frame
+my_dataframe <- data.frame(
+  name = c("Charlie", "David", "Emily"),
+  age = c(30, 35, 28),
+  city = c("New York", "London", "Paris")
+)
+print(my_dataframe)
+```
+
+### Key dplyr verbs
+
+- `select()`: select columns
+- `filter()`: filter rows
+- `mutate()`: create new columns
+- `arrange()`: sort rows
+- `summarise()`: summarise data
+- `group_by()`: group data
+
+## Exercises
+
+We will be using the `mtcars` dataset for many of these exercises.
+
+1. Load the `mtcars` dataset.
+
+```{r}
+# Your code here
+```
+
+2. Select the `mpg`, `cyl`, and `hp` columns from the `mtcars` dataset.
+
+```{r}
+# Your code here
+```
+
+3. Filter the `mtcars` dataset to only include cars with more than 6 cylinders.
+
+```{r}
+# Your code here
+```
+
+4. Create a new column in the `mtcars` dataset called `hp_per_cyl` which is the horsepower per cylinder.
+
+```{r}
+# Your code here
+```
+
+5. Arrange the `mtcars` dataset by the `mpg` column in descending order.
+
+```{r}
+# Your code here
+```
+
+6. Calculate the average `mpg` for each cylinder group.
+
+```{r}
+# Your code here
+```
+
+7. Create an empty data frame named `empty_df`.
+
+```{r}
+# Your code here
+```
+
+8. Create a data frame named `students_df` from the following vectors:
+   - `id = c(1, 2, 3)`
+   - `name = c("Alice", "Bob", "Charlie")`
+   - `score = c(85, 92, 78)`
+
+```{r}
+# Your code here
+```
+
+9. Get the structure and a statistical summary of the `students_df` data frame.
+
+```{r}
+# Your code here
+```
+
+10. Extract the `name` column from `students_df` using the `$` operator.
+
+```{r}
+# Your code here
+```
+
+11. Extract the first two rows of `students_df`.
+
+```{r}
+# Your code here
+```
+
+12. Extract the third row and the `name` and `score` columns from `students_df`.
+
+```{r}
+# Your code here
+```
+
+13. Add a new column `grade` to `students_df` where scores >= 90 are "A", scores >= 80 are "B", and others are "C". (Hint: use `mutate` with `case_when`).
+
+```{r}
+# Your code here
+```
+
+14. Remove the `score` column from `students_df`.
+
+```{r}
+# Your code here
+```
+
+15. Rename the `name` column in `students_df` to `student_name`.
+
+```{r}
+# Your code here
+```
+
+16. Create another data frame `courses_df` with `id = c(1, 2, 3)` and `course = c("Math", "Science", "History")`. Merge `students_df` and `courses_df` by `id`.
+
+```{r}
+# Your code here
+```
+
+17. Create two data frames, `df1` and `df2`, with identical columns. Combine them row-wise.
+
+```{r}
+# Your code here
+```
+
+18. Create two data frames, `df3` and `df4`, with identical rows. Combine them column-wise.
+
+```{r}
+# Your code here
+```
+
+19. Reshape the `mtcars` dataset from wide to long format, keeping `cyl` and `vs` as id variables and gathering `mpg`, `disp`, `hp` into a `metric` and `value` column.
+
+```{r}
+# Your code here
+```
+
+20. Calculate the mean of the `mpg` column in `mtcars`.
+
+```{r}
+# Your code here
+```
+
+21. Calculate the number of rows and columns in `mtcars`.
+
+```{r}
+# Your code here
+```
+
+22. Calculate the column means of `mtcars`.
+
+```{r}
+# Your code here
+```
+
+23. Calculate the row sums of `mtcars`.
+
+```{r}
+# Your code here
+```
+
+## Solutions
+
+[Click here for the solutions](dataframes_answers.Rmd)

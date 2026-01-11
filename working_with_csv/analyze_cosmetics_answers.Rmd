@@ -1,0 +1,65 @@
+---
+title: "Analyzing Cosmetics Data (CSV) - Solutions"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+## Solutions
+
+### Exercise 1: Load the Data
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics <- read_csv("working_with_csv/_data/most_used_beauty_cosmetics_products_extended.csv")
+```
+
+### Exercise 2: Explore the Data
+
+```{r, eval=TRUE, echo=TRUE}
+str(cosmetics)
+summary(cosmetics)
+unique(cosmetics$Product_Size)
+glimpse(cosmetics) # Using dplyr's glimpse for a compact view
+```
+
+### Exercise 3: Data Transformation - Product Size
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics$Product_Size <- factor(cosmetics$Product_Size,
+    levels = c("30ml", "50ml", "100ml", "150ml", "200ml", "250ml"),
+    ordered = TRUE
+)
+# Display the new column structure
+levels(cosmetics$Product_Size)
+str(cosmetics$Product_Size)
+```
+
+### Exercise 4: Data Filtering
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics_large_size <- cosmetics %>%
+  filter(Product_Size > "150ml")
+print(head(cosmetics_large_size))
+```
+
+### Exercise 5: Data Summarization
+
+```{r, eval=TRUE, echo=TRUE}
+summary(cosmetics_large_size)
+nrow(cosmetics_large_size)
+```
+
+### Exercise 6: Data Visualization - Price Distribution
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(cosmetics, aes(x = Price_USD)) +
+  geom_histogram(binwidth = 10, fill = "blue", color = "black") +
+  labs(title = "Distribution of Product Prices (USD)", x = "Price (USD)", y = "Frequency")
+```

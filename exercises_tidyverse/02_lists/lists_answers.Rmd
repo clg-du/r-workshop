@@ -1,0 +1,49 @@
+---
+title: "02: Lists (Solutions)"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solutions
+
+```{r, eval=TRUE, echo=TRUE}
+# Solution to Exercise 1
+my_info <- list(
+  name = "Charlie",
+  age = 30,
+  is_student = FALSE
+)
+print(my_info)
+
+# Solution to Exercise 2
+my_info$age
+
+# Solution to Exercise 3
+my_info$hobbies <- c("reading", "coding", "hiking")
+print(my_info)
+
+# Solution to Exercise 4
+my_empty_list <- list()
+print(my_empty_list)
+
+# Solution to Exercise 5
+length(my_info)
+
+# Solution to Exercise 6
+my_info[[1]]
+
+# Solution to Exercise 7
+my_info[[length(my_info)]]
+
+# Solution to Exercise 8
+my_info[2:3]
+
+# Solution to Exercise 9
+my_info$is_student <- NULL
+print(my_info)
+```

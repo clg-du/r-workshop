@@ -1,0 +1,57 @@
+---
+title: "03: Example ggplot2 Factor Omission"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Understanding Factor Omission in ggplot2
+
+This document demonstrates a common issue encountered when visualizing categorical data with `ggplot2` if the variables are not correctly defined as factors. When numerical variables that represent categories (like "gear" in the `mtcars` dataset) are treated as continuous, `ggplot2` can produce misleading visualizations.
+
+### The Problem: Treating Categorical Data as Continuous
+
+Let's load the `mtcars` dataset and create a scatter plot of `mpg` (miles per gallon) vs. `wt` (weight), mapping the `gear` variable to color.
+
+```{r}
+data(mtcars)
+
+ggplot(mtcars, aes(x = mpg, y = wt, color = gear)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Miles per Gallon vs. Weight by Gears (Incorrect)",
+    x = "Miles per Gallon",
+    y = "Weight (1000 lbs)",
+    color = "Number of Gears"
+  ) +
+  theme_minimal()
+```
+
+**Observation:** Notice that the legend for `gear` is displayed as a continuous color scale, implying that `gear` can take on any value between 3 and 5 (e.g., 3.5, 4.2 gears), which is not true. This misrepresentation occurs because, by default, `ggplot2` interprets numerical variables as continuous unless explicitly told otherwise.
+
+### The Solution: Converting to Factor
+
+To correctly represent `gear` as a categorical variable, we must convert it to a `factor` data type. This tells `ggplot2` to treat its values as discrete categories, leading to an appropriate discrete color scale.
+
+```{r}
+# Convert 'gear' to a factor
+mtcars$gear_factor <- factor(mtcars$gear)
+
+# Re-create the scatter plot with 'gear_factor' mapped to color
+ggplot(mtcars, aes(x = mpg, y = wt, color = gear_factor)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Miles per Gallon vs. Weight by Gears (Correct)",
+    x = "Miles per Gallon",
+    y = "Weight (1000 lbs)",
+    color = "Number of Gears"
+  ) +
+  theme_minimal()
+```
+
+**Conclusion:** Now, the legend correctly shows discrete colors for 3, 4, and 5 gears. This highlights the crucial importance of proper data type handling, especially with factors, to avoid misinterpretation in data visualization. Always ensure that categorical variables are explicitly converted to factors using the `factor()` function when preparing data for plotting.

@@ -1,0 +1,59 @@
+---
+title: "Analyzing Cosmetics Data (RDS) - Solutions"
+author: "Charlie Lindgren"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readr)
+```
+
+## Solutions
+
+### Exercise 1: Load the Data
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics <- read_csv("working_with_rds/_data/most_used_beauty_cosmetics_products_extended.csv")
+```
+
+### Exercise 2: Explore the Data
+
+```{r, eval=TRUE, echo=TRUE}
+str(cosmetics)
+summary(cosmetics)
+unique(cosmetics$Product_Size)
+glimpse(cosmetics) # Using dplyr's glimpse for a compact view
+```
+
+### Exercise 3: Data Transformation - Product Size
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics$Product_Size <- factor(cosmetics$Product_Size,
+    levels = c("30ml", "50ml", "100ml", "150ml", "200ml", "250ml"),
+    ordered = TRUE
+)
+# Display the new column structure
+levels(cosmetics$Product_Size)
+str(cosmetics$Product_Size)
+```
+
+### Exercise 4: Save Data to RDS
+
+```{r, eval=TRUE, echo=TRUE}
+saveRDS(cosmetics, "working_with_rds/_rds/cosmetics.rds")
+```
+
+### Exercise 5: Load Data from RDS
+
+```{r, eval=TRUE, echo=TRUE}
+cosmetics_from_rds <- readRDS("working_with_rds/_rds/cosmetics.rds")
+```
+
+### Exercise 6: Compare Data Frames
+
+```{r, eval=TRUE, echo=TRUE}
+identical(cosmetics, cosmetics_from_rds)
+```
