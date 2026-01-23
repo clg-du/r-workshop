@@ -78,13 +78,17 @@ Now, let's add different types of marginal plots:
 
 #### Marginal Histogram
 ```{r}
-p_hist <- ggMarginal(p, type = "histogram", fill = "skyblue", color = "darkblue")
+p_hist <- ggMarginal(
+  p, type = "histogram", fill = "skyblue", color = "darkblue"
+)
 print(p_hist)
 ```
 
 #### Marginal Density Plot
 ```{r}
-p_density <- ggMarginal(p, type = "density", fill = "lightgreen", color = "darkgreen")
+p_density <- ggMarginal(
+  p, type = "density", fill = "lightgreen", color = "darkgreen"
+)
 print(p_density)
 ```
 

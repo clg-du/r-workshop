@@ -13,7 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, eval=TRUE, echo=TRUE}
 # Solution to Exercise 1
-education_levels <- factor(c("High School", "Bachelor's", "Master's", "PhD", "Bachelor's"))
+education_levels <- factor(
+  c("High School", "Bachelor's", "Master's", "PhD", "Bachelor's")
+)
 print(education_levels)
 
 # Solution to Exercise 2
@@ -36,7 +38,10 @@ print(movie_ratings)
 # Solution to Exercise 5
 students_df <- data.frame(
   student = c("Alice", "Bob", "Charlie", "Diana", "Eve"),
-  grade = factor(c("A", "B", "C", "A", "F"), levels = c("A", "B", "C", "D", "F"))
+  grade = factor(
+    c("A", "B", "C", "A", "F"),
+    levels = c("A", "B", "C", "D", "F")
+  )
 )
 print(students_df)
 

@@ -17,7 +17,9 @@ library(readr)
 ### Exercise 1: Load the Data
 
 ```{r, eval=TRUE, echo=TRUE}
-cosmetics <- read_csv("working_with_csv/_data/most_used_beauty_cosmetics_products_extended.csv")
+cosmetics <- read_csv(
+  "working_with_csv/_data/most_used_beauty_cosmetics_products_extended.csv"
+)
 ```
 
 ### Exercise 2: Explore the Data
@@ -33,8 +35,8 @@ glimpse(cosmetics) # Using dplyr's glimpse for a compact view
 
 ```{r, eval=TRUE, echo=TRUE}
 cosmetics$Product_Size <- factor(cosmetics$Product_Size,
-    levels = c("30ml", "50ml", "100ml", "150ml", "200ml", "250ml"),
-    ordered = TRUE
+  levels = c("30ml", "50ml", "100ml", "150ml", "200ml", "250ml"),
+  ordered = TRUE
 )
 # Display the new column structure
 levels(cosmetics$Product_Size)
@@ -61,5 +63,9 @@ nrow(cosmetics_large_size)
 ```{r, eval=TRUE, echo=TRUE}
 ggplot(cosmetics, aes(x = Price_USD)) +
   geom_histogram(binwidth = 10, fill = "blue", color = "black") +
-  labs(title = "Distribution of Product Prices (USD)", x = "Price (USD)", y = "Frequency")
+  labs(
+    title = "Distribution of Product Prices (USD)",
+    x = "Price (USD)",
+    y = "Frequency"
+  )
 ```

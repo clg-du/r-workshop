@@ -6,12 +6,16 @@ This repository contains the content for a workshop on R programming. It's desig
 
 ## Table of Contents
 
-- [About](#about)
-- [Prerequisites](#prerequisites)
-- [Usage](#usage)
-- [Repository Structure](#repository-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [R Workshop](#r-workshop)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+    - [Tidyverse-based Workshop](#tidyverse-based-workshop)
+  - [Repository Structure](#repository-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## About
 
@@ -40,7 +44,7 @@ install.packages(c("dplyr", "ggplot2", "readr", "tidyr", "ggExtra", "ggthemes"))
 To get started with the workshop, simply clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/charlie/r-workshop.git
+git clone https://github.com/charlie-lindgren/r-workshop.git
 ```
 
 Then, open the `r-workshop.Rproj` file in RStudio. This will open the project in RStudio and set the working directory to the root of the repository.
