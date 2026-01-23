@@ -8,7 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
-library(readr) # For read_csv
+library(ggplot2)
+library(readr)
 ```
 
 ## Introduction
@@ -60,6 +61,14 @@ Load the `cosmetics.rds` file back into R, but name the new object `cosmetics_fr
 ### Exercise 6: Compare Data Frames
 
 Use the `identical()` function to compare the original `cosmetics` data frame with `cosmetics_from_rds` to ensure no data loss or alteration.
+
+```{r}
+# Your code here
+```
+
+### Exercise 7: Data Visualization - Price Distribution
+
+Create a histogram of the `Price_USD` column from `cosmetics_from_rds` to visualize its distribution.
 
 ```{r}
 # Your code here

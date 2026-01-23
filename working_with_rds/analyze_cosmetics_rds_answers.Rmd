@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+library(ggplot2)
 library(readr)
 ```
 
@@ -56,4 +57,16 @@ cosmetics_from_rds <- readRDS("working_with_rds/_rds/cosmetics.rds")
 
 ```{r, eval=TRUE, echo=TRUE}
 identical(cosmetics, cosmetics_from_rds)
+```
+
+### Exercise 7: Data Visualization - Price Distribution
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(cosmetics_from_rds, aes(x = Price_USD)) +
+  geom_histogram(binwidth = 10, fill = "blue", color = "black") +
+  labs(
+    title = "Distribution of Product Prices (USD)",
+    x = "Price (USD)",
+    y = "Frequency"
+  )
 ```

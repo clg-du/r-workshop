@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
-library(dplyr) # For data manipulation if needed
+library(dplyr)
 ```
 
 ## Introduction to Advanced ggplot2 Plots
