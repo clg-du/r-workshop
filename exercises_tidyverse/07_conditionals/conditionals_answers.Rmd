@@ -29,15 +29,15 @@ if (age >= 18) {
 }
 
 # Solution to Exercise 3
-check_grade_func <- function(grade) {
+check_grade <- function(grade) {
   if (grade >= 50) {
     return("Pass")
   } else {
     return("Fail")
   }
 }
-check_grade_func(75)
-check_grade_func(45)
+check_grade(75)
+check_grade(45)
 
 # Solution to Exercise 4
 is_even_odd <- function(num) {

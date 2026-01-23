@@ -92,6 +92,9 @@ is_prime_num <- function(num) {
   if (num <= 1) {
     return(FALSE)
   }
+  if (num == 2) {
+    return(TRUE)
+  }
   for (i in 2:(num - 1)) {
     if (num %% i == 0) {
       return(FALSE)
