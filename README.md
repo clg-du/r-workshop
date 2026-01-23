@@ -32,7 +32,7 @@ Before you begin, make sure you have the following software installed on your ma
 You will also need to install the following R packages:
 
 ```R
-install.packages(c("dplyr", "ggplot2"))
+install.packages(c("dplyr", "ggplot2", "readr", "tidyr", "ggExtra", "ggthemes"))
 ```
 
 ## Usage

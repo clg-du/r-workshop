@@ -25,4 +25,22 @@ education_levels_ordered <- factor(education_levels,
   ordered = TRUE
 )
 print(education_levels_ordered)
+
+# Solution to Exercise 4
+movie_ratings <- factor(
+  c("Good", "Great", "Good", "Excellent", "Good", "Bad"),
+  levels = c("Bad", "Good", "Great", "Excellent")
+)
+print(movie_ratings)
+
+# Solution to Exercise 5
+students_df <- data.frame(
+  student = c("Alice", "Bob", "Charlie", "Diana", "Eve"),
+  grade = factor(c("A", "B", "C", "A", "F"), levels = c("A", "B", "C", "D", "F"))
+)
+print(students_df)
+
+# Solution to Exercise 6
+top_students <- students_df[students_df$grade %in% c("A", "B"), ]
+print(top_students)
 ```

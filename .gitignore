@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# R session files
+.Rhistory
+.RData
+.Rproj.user/
+
+# Temporary files
+*~
